@@ -16,3 +16,7 @@ In the root directory
 `npm start`
 
 Open browser at http://localhost:3000
+
+**Test**
+
+`npm test`
