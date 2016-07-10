@@ -8,8 +8,8 @@ interface IAppProps {
 class App extends Component<IAppProps, any> {
     render() {
         return (
-            <section>
-                Hello {this.props.name}
+            <section className="main-content">
+                <h1>Weather London</h1>
             </section>
         );
     }

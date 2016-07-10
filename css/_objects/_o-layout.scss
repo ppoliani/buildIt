@@ -1,8 +1,19 @@
+#root {
+  height: 100%
+}
+
 /**
  * 1. 50px header + 10px margin
  */
 .main-content {
-  margin-top: 60px; /* [1] */
   display: flex;
-  padding: 0 0.5%;
+  height: 100%;
+  padding: 5% 20%;
+  background: url('../assets/images/bg.jpg') no-repeat;
+
+  h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
 }

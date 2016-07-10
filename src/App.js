@@ -7,7 +7,7 @@ var App = (function (_super) {
         _super.apply(this, arguments);
     }
     App.prototype.render = function () {
-        return (React.createElement("section", null, "Hello ", this.props.name));
+        return (React.createElement("section", {className: "main-content"}, React.createElement("h1", null, "Weather London")));
     };
     return App;
 }(react_1.Component));
