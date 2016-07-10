@@ -20,5 +20,5 @@ export interface IEntry {
 
 export interface IWeather {
     city: string;
-    entries: Array<IEntry>;
+    entries: Array<Array<IEntry>>;
 }

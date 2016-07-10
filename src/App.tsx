@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { IWeather } from './data/weather';
+import TabSelector from './components/TabSelector';
 
 interface IAppProps {
-    name: string
+    weather: IWeather
 }
 
 class App extends Component<IAppProps, any> {
@@ -10,6 +12,7 @@ class App extends Component<IAppProps, any> {
         return (
             <section className="main-content">
                 <h1>Weather London</h1>
+                <TabSelector entries={this.props.weather.entries} />
             </section>
         );
     }

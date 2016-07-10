@@ -6,6 +6,5 @@ import { fetchForecast } from './services/utils';
 
 fetchForecast()
     .then(data => {
-        console.log(data);
-        render(<App name="Pavloss" />, document.getElementById('root'));
+        render(<App weather={data} />, document.getElementById('root'));
     });

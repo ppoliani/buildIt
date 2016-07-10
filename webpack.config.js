@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'cheap-eval-source-map',
+    devtool: 'eval',
     entry: {
         app: './src/index.tsx',
 
@@ -44,7 +44,7 @@ module.exports = {
             filename: 'index.html'
         }),
         new webpack.DefinePlugin({
-            API_URL: JSON.stringify('http://api.openweathermap.org/data/2.5/forecast?q=London,us&mode=json&units=metric&appid=6f46853eca80bc07f3262d493ca931d3'),
+            API_URL: JSON.stringify('http://api.openweathermap.org/data/2.5/forecast?q=London&mode=json&units=metric&appid=6f46853eca80bc07f3262d493ca931d3'),
             ICON_URI: JSON.stringify('http://openweathermap.org/img/w/')
         })
     ],
