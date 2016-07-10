@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const TabContent = ({ key, day, isSelected }) => (
+const TabContent = ({ key, dayEntries, isSelected }) => (
     <div className="c-tab-content">Content Placeholder</div>
 );
 

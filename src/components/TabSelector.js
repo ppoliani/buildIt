@@ -17,7 +17,7 @@ var TabSelector = (function (_super) {
     TabSelector.prototype.render = function () {
         var _this = this;
         var entries = this.props.entries;
-        return React.createElement("div", {className: "c-tab-selector o-flex o-column"}, React.createElement("div", {className: "c-tab-selector__header o-flex o-row"}, entries.map(function (d, i) { return React.createElement(TabHeader_1.default, {key: i, day: d[0], isSelected: TabSelector.isSelected(_this.state, i)}); })), React.createElement("div", {className: "c-tab-selector__body"}, entries.map(function (d, i) { return React.createElement(TabContent_1.default, {key: i, day: d[0], isSelected: TabSelector.isSelected(_this.state, i)}); })));
+        return React.createElement("div", {className: "c-tab-selector o-flex o-column"}, React.createElement("div", {className: "c-tab-selector__header o-flex o-row"}, entries.map(function (e, i) { return React.createElement(TabHeader_1.default, {key: i, dayEntries: e, isSelected: TabSelector.isSelected(_this.state, i)}); })), React.createElement("div", {className: "c-tab-selector__body"}, entries.map(function (e, i) { return React.createElement(TabContent_1.default, {key: i, dayEntries: e, isSelected: TabSelector.isSelected(_this.state, i)}); })));
     };
     return TabSelector;
 }(react_1.Component));

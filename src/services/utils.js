@@ -50,20 +50,13 @@ var transformData = function (data) { return ({
     city: data.city.name,
     entries: groupByDays(sort(transformList(data)))
 }); };
-var __data = null;
 exports.fetchForecast = function () {
     NProgress.start();
-    // ToDo: temp solution.
-    if (__data) {
-        return Promise.resolve(__data);
-    }
     return fetch("" + API_URL)
         .then(function (response) { return response.json(); })
         .then(function (data) {
         NProgress.done();
-        // ToDo: temp solution to avoid hitting API limit
-        __data = transformData(data);
-        return __data;
+        return transformData(data);
     });
 };
 //# sourceMappingURL=utils.js.map

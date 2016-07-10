@@ -61,22 +61,14 @@ const transformData = data => ({
     entries: groupByDays(sort(transformList(data)))
 }) as IWeather;
 
-let __data: IWeather = null;
 export const fetchForecast = () => {
     NProgress.start();
-
-    // ToDo: temp solution.
-    if(__data) {
-        return Promise.resolve(__data);
-    }
 
     return fetch(`${API_URL}`)
         .then(response => response.json())
         .then(data => {
             NProgress.done();
-            // ToDo: temp solution to avoid hitting API limit
-            __data = transformData(data);
 
-            return __data;
+            return transformData(data);
         });
 };
