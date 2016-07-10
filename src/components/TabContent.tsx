@@ -8,19 +8,21 @@ type ITabContentProps = {
     isSelected: boolean
 }
 
-const TabContent = ({ dayEntries, isSelected }: ITabContentProps) => (
-    <div className={classNames('c-tab-content', 'o-flex', 'o-row', { 'c-tab-content--active': isSelected })}>
+const TabContent = ({ dayEntries, isSelected }: ITabContentProps) => {
+    const maxWidth = `${100 / dayEntries.length}%`;
+
+    return <div className={classNames('c-tab-content', 'o-flex', 'o-row', { 'c-tab-content--active': isSelected })}>
         {
             dayEntries.map(
                 (dayEntry, i) =>
-                    <div key={i} className="o-flex o-column o-flex-1 o-flex-center c-tab-content__item">
+                    <div key={i} className="o-flex o-column o-flex-1 o-flex-center c-tab-content__item" style={{maxWidth}}>
                         <span>{dayEntry.date.format('HH:00')}</span>
                         <img width="50px" height="50px" src={`${ICON_URI}/${dayEntry.icon}.png`} alt="Weather Icon" />
-                        <span>{dayEntry.temp.max}</span>
+                        <span>{dayEntry.temp.max} °C</span>
                     </div>
             )
         }
     </div>
-);
+};
 
 export default TabContent;

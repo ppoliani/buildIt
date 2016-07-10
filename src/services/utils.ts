@@ -7,7 +7,7 @@ import { IWeather, IEntry } from '../data/weather';
  */
 const getPrev = arr => arr.length >= 1 ? [arr[arr.length - 1], arr.length - 1] : undefined;
 
-const isSameDay = (dayA, dayB) => dayA.diff(dayB, 'days') === 0;
+const isSameDay = (dayA, dayB) => dayA.isSame(dayB, 'day');
 
 const sort = (entries: Array<IEntry>) => entries.sort((a, b) => a.date.diff(b.date));
 

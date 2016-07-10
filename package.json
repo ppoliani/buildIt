@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Weather forecast",
   "scripts": {
-    "prestart": "npm install && typings install",
     "start": "webpack-dev-server --inline --progress --port 3000",
     "test": "./node_modules/.bin/karma start karma.config.js"
   },
