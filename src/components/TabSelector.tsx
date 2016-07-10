@@ -1,17 +1,26 @@
 import * as React from 'react';
+import { Component } from 'react';
 import {IEntry} from '../data/weather';
-import TabItem from './TabItem';
+import TabHeader from './TabHeader';
+import TabContent from './TabContent';
 
-type TabSelectorProps = { entries : Array<Array<IEntry>> };
+interface ITabSelectorProps {
+    entries : Array<Array<IEntry>>
+}
 
-const TabSelector = ({ entries }: TabSelectorProps) => (
-    <div className="c-tab-selector">
-        {
-            entries.map(
-                d => <TabItem />
-            )
-        }
-    </div>
-);
+class TabSelector extends Component<ITabSelectorProps, {}> {
+    render() {
+        const { entries } = this.props;
+
+        return <div className="c-tab-selector">
+            <div className="c-tab-selector__header">
+                { entries.map(d => <TabHeader />) }
+            </div>
+            <div className="c-tab-selector__body">
+                { entries.map(d => <TabContent />) }
+            </div>
+        </div>
+    }
+}
 
 export default TabSelector;

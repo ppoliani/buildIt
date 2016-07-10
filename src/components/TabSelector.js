@@ -1,10 +1,19 @@
 "use strict";
 var React = require('react');
-var TabItem_1 = require('./TabItem');
-var TabSelector = function (_a) {
-    var entries = _a.entries;
-    return (React.createElement("div", {className: "c-tab-selector"}, entries.map(function (d) { return React.createElement(TabItem_1.default, null); })));
-};
+var react_1 = require('react');
+var TabHeader_1 = require('./TabHeader');
+var TabContent_1 = require('./TabContent');
+var TabSelector = (function (_super) {
+    __extends(TabSelector, _super);
+    function TabSelector() {
+        _super.apply(this, arguments);
+    }
+    TabSelector.prototype.render = function () {
+        var entries = this.props.entries;
+        return React.createElement("div", {className: "c-tab-selector"}, React.createElement("div", {className: "c-tab-selector__header"}, entries.map(function (d) { return React.createElement(TabHeader_1.default, null); })), React.createElement("div", {className: "c-tab-selector__body"}, entries.map(function (d) { return React.createElement(TabContent_1.default, null); })));
+    };
+    return TabSelector;
+}(react_1.Component));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = TabSelector;
 //# sourceMappingURL=TabSelector.js.map
