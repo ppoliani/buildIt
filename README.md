@@ -38,6 +38,8 @@ to fetch the data from the third party API.
 
 - I would also add the option to select the Location, as well as, the date range.
 
+- The data we fetch from the API is quite extensive; so I could probably display more information on the page.
+
 - Persisting the URL state might also be a good option. We could probably store the selected day in the url state.
 
 - I used flexbox extensively but I haven't fully tested how responsive the design is.
