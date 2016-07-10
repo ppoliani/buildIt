@@ -10,12 +10,16 @@ module.exports = {
 
         vendor: [
             'core-js',
-            'whatwg-fetch',
+            'nprogress-npm',
+            'moment',
             'react',
-            'react-dom'
+            'react-dom',
+            'whatwg-fetch'
         ],
 
-        style: './css/app'
+        style: './css/app',
+
+        'vendor-style': './css/vendor'
     },
 
     output: {
@@ -40,7 +44,8 @@ module.exports = {
             filename: 'index.html'
         }),
         new webpack.DefinePlugin({
-            API_URL: JSON.stringify('http://api.openweathermap.org/data/2.5/forecast?q=London,us&mode=json&appid=6f46853eca80bc07f3262d493ca931d3')
+            API_URL: JSON.stringify('http://api.openweathermap.org/data/2.5/forecast?q=London,us&mode=json&units=metric&appid=6f46853eca80bc07f3262d493ca931d3'),
+            ICON_URI: JSON.stringify('http://openweathermap.org/img/w/')
         })
     ],
     module: {

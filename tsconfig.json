@@ -7,9 +7,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "noEmitHelpers": true
+    "noEmitHelpers": true,
+    "allowJs": true
   },
   "filesGlob": [
+    "./typings/index.d.ts",
     "./global.d.t",
     "./src/**/*.tsx"
   ],
