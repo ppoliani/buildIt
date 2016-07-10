@@ -23,5 +23,10 @@ $color: #14805e;
 }
 
 .c-tab-content {
+  display: none;
   position: absolute;
+
+  &--active {
+    display: block;
+  }
 }
