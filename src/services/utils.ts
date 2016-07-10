@@ -53,7 +53,7 @@ const transformList = ({list}) =>
     ) as Array<IEntry>;
 
 /**
- * transforms the data we receive from the service to a data
+ * Transforms the data we receive from the service to a data
  * structure that our app understands.
  */
 const transformData = data => ({

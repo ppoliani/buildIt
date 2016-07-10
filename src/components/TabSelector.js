@@ -10,7 +10,7 @@ var TabSelector = (function (_super) {
     }
     TabSelector.prototype.render = function () {
         var entries = this.props.entries;
-        return React.createElement("div", {className: "c-tab-selector"}, React.createElement("div", {className: "c-tab-selector__header"}, entries.map(function (d, i) { return React.createElement(TabHeader_1.default, {key: i, day: d}); })), React.createElement("div", {className: "c-tab-selector__body"}, entries.map(function (d, i) { return React.createElement(TabContent_1.default, {key: i, day: d}); })));
+        return React.createElement("div", {className: "c-tab-selector o-flex o-column"}, React.createElement("div", {className: "c-tab-selector__header o-flex o-row"}, entries.map(function (d, i) { return React.createElement(TabHeader_1.default, {key: i, day: d}); })), React.createElement("div", {className: "c-tab-selector__body"}, entries.map(function (d, i) { return React.createElement(TabContent_1.default, {key: i, day: d}); })));
     };
     return TabSelector;
 }(react_1.Component));

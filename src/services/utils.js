@@ -43,7 +43,7 @@ var transformList = function (_a) {
     }); });
 };
 /**
- * transforms the data we receive from the service to a data
+ * Transforms the data we receive from the service to a data
  * structure that our app understands.
  */
 var transformData = function (data) { return ({

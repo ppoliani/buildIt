@@ -12,8 +12,8 @@ class TabSelector extends Component<ITabSelectorProps, {}> {
     render() {
         const { entries } = this.props;
 
-        return <div className="c-tab-selector">
-            <div className="c-tab-selector__header">
+        return <div className="c-tab-selector o-flex o-column">
+            <div className="c-tab-selector__header o-flex o-row">
                 { entries.map((d, i) => <TabHeader key={i} day={d} />) }
             </div>
             <div className="c-tab-selector__body">
