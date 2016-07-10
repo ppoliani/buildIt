@@ -9,8 +9,17 @@ type ITabContentProps = {
 }
 
 const TabContent = ({ dayEntries, isSelected }: ITabContentProps) => (
-    <div className={classNames('c-tab-content', { 'c-tab-content--active': isSelected })}>
-        {dayEntries[0].date.format('HH:hh')} 
+    <div className={classNames('c-tab-content', 'o-flex', 'o-row', { 'c-tab-content--active': isSelected })}>
+        {
+            dayEntries.map(
+                (dayEntry, i) =>
+                    <div key={i} className="o-flex o-column o-flex-1 o-flex-center c-tab-content__item">
+                        <span>{dayEntry.date.format('HH:00')}</span>
+                        <img width="50px" height="50px" src={`${ICON_URI}/${dayEntry.icon}.png`} alt="Weather Icon" />
+                        <span>{dayEntry.temp.max}</span>
+                    </div>
+            )
+        }
     </div>
 );
 

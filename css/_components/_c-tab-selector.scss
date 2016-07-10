@@ -9,7 +9,7 @@ $color: #14805e;
 
 .c-tab-selector__body {
   height: 250px;
-  padding: 1rem;
+  position: relative;
   background: #fff;
 }
 
@@ -25,9 +25,18 @@ $color: #14805e;
 
 .c-tab-content {
   display: none;
+  width: 100%;
   position: absolute;
 
   &--active {
-    display: block;
+    display: flex;
+  }
+
+  &__item {
+    padding: 1rem;
+
+    &:not(:last-child) {
+      border-right: .5px $color dotted;
+    }
   }
 }
