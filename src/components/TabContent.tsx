@@ -9,7 +9,9 @@ type ITabContentProps = {
 }
 
 const TabContent = ({ dayEntries, isSelected }: ITabContentProps) => (
-    <div className={classNames('c-tab-content', { 'c-tab-content--active': isSelected })}>Content Placeholder</div>
+    <div className={classNames('c-tab-content', { 'c-tab-content--active': isSelected })}>
+        {dayEntries[0].date.format('HH:hh')} 
+    </div>
 );
 
 export default TabContent;

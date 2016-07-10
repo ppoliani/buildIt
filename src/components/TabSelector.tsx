@@ -21,15 +21,33 @@ class TabSelector extends Component<ITabSelectorProps, {}> {
         return state.selected === index;
     }
 
+    handleClick = selected => {
+        this.setState({ selected });
+    };
+
     render() {
         const { entries } = this.props;
 
         return <div className="c-tab-selector o-flex o-column">
             <div className="c-tab-selector__header o-flex o-row">
-                { entries.map((e, i) => <TabHeader key={i} dayEntries={e} isSelected={TabSelector.isSelected(this.state, i)} />) }
+                {
+                    entries.map((e, i) =>
+                        <TabHeader key={i}
+                                   index={i}
+                                   dayEntries={e}
+                                   isSelected={TabSelector.isSelected(this.state, i)}
+                                   onClick={this.handleClick}
+                        />)
+                }
             </div>
             <div className="c-tab-selector__body">
-                { entries.map((e, i) => <TabContent key={i} dayEntries={e} isSelected={TabSelector.isSelected(this.state, i)} />) }
+                { 
+                    entries.map((e, i) => 
+                        <TabContent key={i} 
+                                    dayEntries={e} 
+                                    isSelected={TabSelector.isSelected(this.state, i)} 
+                        />) 
+                }
             </div>
         </div>
     }
