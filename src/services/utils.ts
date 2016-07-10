@@ -11,6 +11,9 @@ const isSameDay = (dayA, dayB) => dayA.isSame(dayB, 'day');
 
 const sort = (entries: Array<IEntry>) => entries.sort((a, b) => a.date.diff(b.date));
 
+/**
+ * Get the individual entries and group them into the day they belong
+ */
 const groupByDays = (entries: Array<IEntry>) =>
     entries.reduce(
         (acc, entry) => {
