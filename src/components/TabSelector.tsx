@@ -9,15 +9,27 @@ interface ITabSelectorProps {
 }
 
 class TabSelector extends Component<ITabSelectorProps, {}> {
+    constructor(props, state) {
+        super(props, state);
+
+        this.state = {
+            selected: 0
+        }
+    }
+
+    static isSelected(state, index) {
+        return state.selected === index;
+    }
+
     render() {
         const { entries } = this.props;
 
         return <div className="c-tab-selector o-flex o-column">
             <div className="c-tab-selector__header o-flex o-row">
-                { entries.map((d, i) => <TabHeader key={i} day={d} />) }
+                { entries.map((d, i) => <TabHeader key={i} day={d[0]} isSelected={TabSelector.isSelected(this.state, i)} />) }
             </div>
             <div className="c-tab-selector__body">
-                { entries.map((d, i) => <TabContent key={i} day={d} />) }
+                { entries.map((d, i) => <TabContent key={i} day={d[0]} isSelected={TabSelector.isSelected(this.state, i)} />) }
             </div>
         </div>
     }

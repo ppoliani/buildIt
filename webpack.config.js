@@ -9,6 +9,7 @@ module.exports = {
         app: './src/index.tsx',
 
         vendor: [
+            'classnames',
             'core-js',
             'nprogress-npm',
             'moment',

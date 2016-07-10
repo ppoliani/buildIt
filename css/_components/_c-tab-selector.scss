@@ -1,7 +1,8 @@
+$color: #14805e;
+
 .c-tab-selector__header {
   height: 120px;
-  background: #14805e;
-  padding: 1rem;
+  background: $color;
   color: #fff;
   font-weight: bold;
 }
@@ -10,6 +11,15 @@
   height: 250px;
   padding: 1rem;
   background: #fff;
+}
+
+.c-tab-header {
+  padding: 1rem;
+
+  &--active {
+    background: #fff;
+    color: $color;
+  }
 }
 
 .c-tab-content {

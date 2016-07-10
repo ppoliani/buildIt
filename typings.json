@@ -5,6 +5,7 @@
     "react-dom": "registry:npm/react-dom#15.0.1+20160705210405"
   },
   "globalDependencies": {
+    "classnames": "registry:dt/classnames#0.0.0+20160316155526",
     "core-js": "registry:dt/core-js#0.0.0+20160602141332",
     "moment": "registry:dt/moment#2.8.0+20160316155526",
     "moment-node": "registry:dt/moment-node#2.11.1+20160511043338",

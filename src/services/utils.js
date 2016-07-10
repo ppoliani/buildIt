@@ -31,8 +31,8 @@ var transformList = function (_a) {
     return list.map(function (item) { return ({
         date: moment(item.dt_txt),
         temp: {
-            min: item.main.temp_min,
-            max: item.main.temp_max
+            min: Math.round(item.main.temp_min),
+            max: Math.round(item.main.temp_max)
         },
         humidity: item.main.humidity,
         icon: item.weather[0].icon,

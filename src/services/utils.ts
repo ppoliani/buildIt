@@ -40,8 +40,8 @@ const transformList = ({list}) =>
         item => ({
             date: moment(item.dt_txt),
             temp: {
-                min: item.main.temp_min,
-                max: item.main.temp_max
+                min: Math.round(item.main.temp_min),
+                max: Math.round(item.main.temp_max)
             },
             humidity: item.main.humidity,
             icon: item.weather[0].icon,
