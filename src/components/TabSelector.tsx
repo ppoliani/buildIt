@@ -14,10 +14,10 @@ class TabSelector extends Component<ITabSelectorProps, {}> {
 
         return <div className="c-tab-selector">
             <div className="c-tab-selector__header">
-                { entries.map(d => <TabHeader />) }
+                { entries.map((d, i) => <TabHeader key={i} day={d} />) }
             </div>
             <div className="c-tab-selector__body">
-                { entries.map(d => <TabContent />) }
+                { entries.map((d, i) => <TabContent key={i} day={d} />) }
             </div>
         </div>
     }
