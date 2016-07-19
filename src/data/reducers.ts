@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { SET_DATA, SELECT_TAB } from './actions';
 
 type Action = {
     type: string;
@@ -6,15 +7,25 @@ type Action = {
 }
 
 
-const weatherData = (state = {}, action: Action) => {
-    return state;
+const weather = (state = { entries: [] }, action: Action) => {
+    switch (action.type) {
+        case SET_DATA:
+            return Object.assign({}, state, action.data);
+        default:
+            return state;
+    }
 };
 
 const selectedTab = (state = 0, action: Action) => {
-    return state;
+    switch (action.type) {
+        case SELECT_TAB:
+            return action.data;
+        default:
+            return state;
+    }
 };
 
 export default combineReducers({
-    weatherData,
+    weather,
     selectedTab,
 });

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { connect } from 'react-redux';
 import { IWeather } from './data/weather';
 import TabSelector from './components/TabSelector';
 
@@ -18,4 +19,6 @@ class App extends Component<IAppProps, any> {
     }
 }
 
-export default App;
+export default connect(
+    state => ({ weather: state.weather })
+)(App);

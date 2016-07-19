@@ -6,17 +6,15 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import App from './App';
 import reducers from './data/reducers';
+import { fetchData } from './data/actions';
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 render(
     <Provider store={store}>
-        <App weather={data} />
+        <App />
     </Provider>,
     document.getElementById('root')
 );
 
-fetchForecast()
-    .then(data => {
-        render(<App weather={data} />, document.getElementById('root'));
-    });
+store.dispatch(fetchData());
