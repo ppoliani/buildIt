@@ -12,7 +12,7 @@ class App extends Component<IAppProps, any> {
         return (
             <section className="main-content">
                 <h1>Weather London</h1>
-                <TabSelector entries={this.props.weather.entries} />
+                <TabSelector [entries]="entries" />
             </section>
         );
     }
